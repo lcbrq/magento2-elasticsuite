@@ -433,7 +433,7 @@ class Rule extends \Smile\ElasticsuiteCatalogRule\Model\Rule implements VirtualR
         // -       - Category C (virtual with category B as root)
         // When you compute the rule of the category A you do not need to compute the rule of the category C
         // as all the product will be there.
-        if ($rootCategory && array_intersect(explode('/', $rootCategory->getPath()), $excludedCategories)) {
+        if ($rootCategory && array_intersect(explode('/', (string) $rootCategory->getPath()), $excludedCategories)) {
             return null;
         }
 
